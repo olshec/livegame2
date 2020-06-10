@@ -29,7 +29,7 @@ public class UpdateThread extends Thread{
 			oldGrid = cellGrid.getGrid();
 			newGrid = new boolean[oldGrid.length][oldGrid[0].length];
 			
-			//parallel update//\\//\\//\\\//\\//\\//\\//
+			//parallel update===============================
 			long startTime = System.currentTimeMillis();
 			
 			SubUpdateThread[] subUpdaters = new SubUpdateThread[parallelLevel];
@@ -51,7 +51,7 @@ public class UpdateThread extends Thread{
 			}
 			
 			long endTime = System.currentTimeMillis();
-			//\\//\\//\\\//\\//\\//\\//\\//\\\//\\//\\//
+			//===========================================
 			
 			if(count < evalIter){
 				count++;

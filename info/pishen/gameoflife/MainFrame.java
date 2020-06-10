@@ -51,7 +51,6 @@ public class MainFrame extends JFrame {
 	private JScrollBar hScrollBar, vScrollBar;
 	//private int contentWidth, contentHeight;
 	private int cellSize = 10;
-	private final int MIN_CELL_SIZE = 2, MAX_CELL_SIZE = 20;
 	private boolean isRunning = false;
 	private boolean updateValue;
 	
@@ -123,16 +122,11 @@ public class MainFrame extends JFrame {
 			}
 		});
 		buttomPanel.add(runPauseButton);
-		
-		
-		File patternDir = new File("pattern");
-		//String[] customPatterns = patternDir.list();
+
 		String[] allPatterns = new String[2];
 		allPatterns[0] = "clear";
 		allPatterns[1] = "random";
-//		for(int i = 0; i < customPatterns.length; i++){
-//			allPatterns[i + 2] = customPatterns[i];
-//		}
+
 		patternSelector = new JComboBox(allPatterns);
 		patternSelector.setSelectedIndex(0);
 		patternSelector.addActionListener(new ActionListener() {
@@ -294,11 +288,6 @@ public class MainFrame extends JFrame {
 		customScrollPanel.add(vScrollBar, gbc_vScrollBar);
 	}
 	
-	private void updateScale(){
-		hScrollBar.setMaximum(cellGrid.getColNum() * cellSize);
-		vScrollBar.setMaximum(cellGrid.getRowNum() * cellSize);
-		contentPanel.repaint();
-	}
 	
 	private void createNewCellGrid(String patternName){
 		try {
