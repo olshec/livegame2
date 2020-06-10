@@ -58,8 +58,6 @@ public class MainFrame extends JFrame {
 	private CellGrid cellGrid;
 	private UpdateThread updateThread;
 	private JSlider threadNumSlider;
- 	private JButton zoomIn;
-	private JButton zoomOut;
 	private JLabel threadNumLabel;
 	private JLabel updateTimeLabel;
 	private JComboBox patternSelector;
@@ -126,33 +124,6 @@ public class MainFrame extends JFrame {
 		});
 		buttomPanel.add(runPauseButton);
 		
-		zoomIn = new JButton("+");
-		zoomIn.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				cellSize++;
-				zoomOut.setEnabled(true);
-				if(cellSize == MAX_CELL_SIZE){
-					zoomIn.setEnabled(false);
-				}
-				updateScale();
-			}
-		});
-		buttomPanel.add(zoomIn);
-		
-		zoomOut = new JButton("-");
-		zoomOut.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				cellSize--;
-				zoomIn.setEnabled(true);
-				if(cellSize == MIN_CELL_SIZE){
-					zoomOut.setEnabled(false);
-				}
-				updateScale();
-			}
-		});
-		buttomPanel.add(zoomOut);
 		
 		File patternDir = new File("pattern");
 		//String[] customPatterns = patternDir.list();

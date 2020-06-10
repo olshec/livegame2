@@ -41,33 +41,33 @@ public class CellGrid {
 			return;
 		}
 		
-		File pattern = new File("pattern/" + patternName);
+		//File pattern = new File("pattern/" + patternName);
 		
-		BufferedReader in = new BufferedReader(new FileReader(pattern));
+		//BufferedReader in = new BufferedReader(new FileReader(pattern));
 		int width = 1000, height = 1000, iStart = 0, jStart = 0;
 		String content = "";
-		String line = null;
-		while((line = in.readLine()) != null){
-			if(line.startsWith("#")){
-				continue;
-			}else if(line.startsWith("x")){
-				String[] infos = line.split(", ");
-				for(String info: infos){
-					if(info.startsWith("w")){
-						width = Integer.parseInt(info.split(" = ")[1]);
-					}else if(info.startsWith("h")){
-						height = Integer.parseInt(info.split(" = ")[1]);
-					}else if(info.startsWith("i")){
-						iStart = Integer.parseInt(info.split(" = ")[1]);
-					}else if(info.startsWith("j")){
-						jStart = Integer.parseInt(info.split(" = ")[1]);
-					}
-				}
-			}else{
-				content += line;
-			}
-		}
-		in.close();
+//		String line = null;
+//		while((line = in.readLine()) != null){
+//			if(line.startsWith("#")){
+//				continue;
+//			}else if(line.startsWith("x")){
+//				String[] infos = line.split(", ");
+//				for(String info: infos){
+//					if(info.startsWith("w")){
+//						width = Integer.parseInt(info.split(" = ")[1]);
+//					}else if(info.startsWith("h")){
+//						height = Integer.parseInt(info.split(" = ")[1]);
+//					}else if(info.startsWith("i")){
+//						iStart = Integer.parseInt(info.split(" = ")[1]);
+//					}else if(info.startsWith("j")){
+//						jStart = Integer.parseInt(info.split(" = ")[1]);
+//					}
+//				}
+//			}else{
+//				content += line;
+//			}
+//		}
+//		in.close();
 		
 		grid = new boolean[height][width];
 		int iCurrent = iStart, jCurrent = jStart;
